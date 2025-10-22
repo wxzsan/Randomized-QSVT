@@ -1,11 +1,17 @@
 ### Randomized-QSVT: Depth and Complexity Studies
 
 This repository contains the source code for the paper:
-- Randomized Quantum Singular Value Transformation  
-  Xinzhao Wang*, Yuxin Zhang*, Soumyabrata Hazra, Tongyang Li, Changpeng Shao, Shantanav Chakraborty  
-  arXiv: [arXiv:2510.06851](https://arxiv.org/abs/2510.06851)
 
-Overview
+> **Randomized Quantum Singular Value Transformation**
+>
+> Xinzhao Wang*, Yuxin Zhang*, Soumyabrata Hazra, Tongyang Li, Changpeng Shao, Shantanav Chakraborty
+>
+> **[arXiv:2510.06851](https://arxiv.org/abs/2510.06851)**
+>
+> ---
+> <small>\* Equal contribution</small>
+
+## Overview
 - Study circuit depth and asymptotic time complexity for ground state property estimation using:
   - Our Method
   - QSVT with Trotterization
@@ -14,7 +20,7 @@ Overview
 - Includes utilities to construct molecular Hamiltonians and numerically estimate spectral gaps.
 
 
-Repository Structure
+## Repository Structure
 - depth_functions.py: Asymptotic circuit depth formulas.
 - complexity_functions.py: Asymptotic gate complexity formulas.
 - combined_depth_vs_n.py: Depth vs $n$ for long-range and hybrid models
@@ -23,14 +29,13 @@ Repository Structure
 - hamiltoinan_construction.py: Build and save qubit Hamiltonians (OpenFermion + PySCF).
 - spectral-gap.py: Numerical spectral gap estimation for long-range spin models (SciPy/Numba).
 
-Dependencies
+## Dependencies
 - Python 3.9+
 - numpy, matplotlib, scipy, numba
 - For Hamiltonian construction: openfermion, openfermionpyscf, pyscf
 
 
-How to Run
-
+## How to Run
 - Chemistry plots (requires prebuilt qubit Hamiltonians):
   1) Build and store the three molecular qubit Hamiltonians first:
   ```bash
