@@ -37,13 +37,13 @@ This repository contains the source code for the paper:
 
 ## How to Run
 - Chemistry plots (requires prebuilt qubit Hamiltonians):
-  1) Build and store the three molecular qubit Hamiltonians first:
+  Build and store the three molecular qubit Hamiltonians first:
   ```bash
   python hamiltoinan_construction.py
   ```
   This generates `co2_hamiltonian.pkl`, `ethane_hamiltonian.pkl`, and `propane_hamiltonian.pkl` in the repo root.
 
-  2) Then run the chemistry plotting scripts:
+  Then run the chemistry plotting scripts:
   - Depth vs $\epsilon$ (per molecule, multiple methods):
   ```bash
   python plot_depth_vs_eps.py
