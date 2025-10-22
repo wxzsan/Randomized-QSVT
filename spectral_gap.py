@@ -31,7 +31,7 @@ def precompute_diagonal(n, J, alpha):
         H_diag[s_idx] = interaction_energy
     return H_diag
 
-# Step 2: Highly efficient matvec with complexity O(n * 2^n)
+# Step 2: Matrix vector product
 @nb.njit(parallel=True, fastmath=True)
 def hamiltonian_matvec_final(v_flat, n, h, H_diag):
     """
@@ -87,7 +87,6 @@ if __name__ == "__main__":
         print(f"\nComputing system size N = {n}...")
         dim = 2**n
         
-        # *** Final optimized workflow ***
         # 1. Precompute diagonal once
         print(f"  Pre-computing {dim}-element diagonal part...")
         H_diag_precomputed = precompute_diagonal(n, J_val, alpha_val)
@@ -101,12 +100,8 @@ if __name__ == "__main__":
         
         print(f"  Diagonalizing with O(n*2^n) matvec...")
         
-        # =======================================================================
-        # *** Key adjustments ***
-        # 1) Create a more physical initial vector v0: equal superposition (x+)
         v0 = np.ones(dim, dtype=np.float64) / np.sqrt(dim)
         
-        # 2) Increase ncv in eigsh: for k=2, raise from ~20 to 40
         eigenvalues = eigsh(
             H_op, 
             k=2, 
@@ -123,7 +118,7 @@ if __name__ == "__main__":
         end_time = time.time()
         print(f"  N={n} computation completed. Spectral gap = {gap:.6f}. Time taken: {end_time - start_time:.2f} seconds.")
         
-        # Checkpoint saving logic (unchanged)
+        # Checkpoint saving logic
         completed_n_values.append(n)
         checkpoint_data = {'gaps': gaps, 'completed_n_values': completed_n_values, 'parameters': {'J': J_val, 'h': h_val, 'alpha': alpha_val}}
         with open(checkpoint_file, 'wb') as f:
@@ -143,7 +138,6 @@ if __name__ == "__main__":
     
     plt.xlabel('System Size (n)', fontsize=20)
     plt.ylabel('Spectral Gap', fontsize=20)
-    # plt.title(f'Spectral Gap vs. System Size (J={J_val}, h={h_val}, α={alpha_val})', fontsize=18)
     plt.legend(fontsize=16)
     plt.grid(True)
     plt.xticks(plot_n_values, fontsize=18) 
