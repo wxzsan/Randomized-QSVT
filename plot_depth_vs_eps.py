@@ -67,8 +67,7 @@ if __name__ == "__main__":
             print(f"{molecule['name']}: File not found")
         except Exception as e:
             print(f"{molecule['name']}: Error - {e}")
-            
-    # Keep a slightly taller canvas to provide ample space for layout
+
     fig, axs = plt.subplots(1, len(molecules), figsize=(24, 7.5), sharey=True)
     
     styles = {
@@ -130,15 +129,10 @@ if __name__ == "__main__":
         
         ax.tick_params(axis='both', which='major', labelsize=14)
 
-    # *** CHANGE 1: Modified the Y-axis label as requested ***
     axs[0].set_ylabel("Circuit Depth", fontsize=16)
     
     handles, labels = axs[0].get_legend_handles_labels()
 
-    # Legend position remains the same
-    # ... other code ...
-
-    # Legend position remains the same
     legend = fig.legend(handles, labels, 
             loc='upper center',
             bbox_to_anchor=(0.5, 1.04), 
@@ -149,9 +143,8 @@ if __name__ == "__main__":
             title="Methods", 
             title_fontsize=18)
     
-    legend._legend_box.sep = 15  # Add 5 points of separation
-        
-    # Keep the adjustment to make space for the legend
+    legend._legend_box.sep = 15
+    
     fig.subplots_adjust(left=0.06, right=0.98, top=0.75, bottom=0.18, wspace=0.2)
     
     plt.show()

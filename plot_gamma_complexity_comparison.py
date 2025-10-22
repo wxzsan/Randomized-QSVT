@@ -63,7 +63,6 @@ if __name__ == "__main__":
             print(f"{molecule['name']}: Error - {e}")
     print()
     
-    # Use a larger canvas similar to the first script
     fig, axs = plt.subplots(1, len(molecules), figsize=(24, 7.5), sharey=True)
     
     # --- Plot styles ---
@@ -87,7 +86,7 @@ if __name__ == "__main__":
         lambda_val = molecule_params[molecule['name']]['lambda']
         
         # --- Use gamma as x-axis ---
-        gamma_range = np.logspace(-4, -1, 50)  # from 0.0001 to 0.1
+        gamma_range = np.logspace(-4, -1, 50)
         
         complexities = {
             "Our Method": [],
@@ -123,7 +122,6 @@ if __name__ == "__main__":
     # --- Shared legend ---
     handles, labels = axs[0].get_legend_handles_labels()
     
-    # Use fig.legend with shared styles
     legend = fig.legend(handles, labels, 
                loc='upper center',
                bbox_to_anchor=(0.5, 1.0), 
