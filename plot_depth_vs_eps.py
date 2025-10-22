@@ -67,8 +67,7 @@ if __name__ == "__main__":
             print(f"{molecule['name']}: File not found")
         except Exception as e:
             print(f"{molecule['name']}: Error - {e}")
-    print()
-
+            
     # Keep a slightly taller canvas to provide ample space for layout
     fig, axs = plt.subplots(1, len(molecules), figsize=(24, 7.5), sharey=True)
     

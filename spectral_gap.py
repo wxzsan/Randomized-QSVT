@@ -112,8 +112,8 @@ if __name__ == "__main__":
             k=2, 
             which='SA', 
             return_eigenvectors=False,
-            ncv=40,  # 增加計算子空間大小
-            v0=v0    # 提供更好的初始猜測
+            ncv=40,  
+            v0=v0    
         )
         
         gap = np.abs(eigenvalues[1] - eigenvalues[0])

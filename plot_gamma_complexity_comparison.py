@@ -4,27 +4,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 from complexity_functions import (
     our_method_complexity,
-    other_randomized_methods_complexity,
-    calculate_pruned_params
+    other_randomized_methods_complexity
 )
 
 def calculate_identity_removed_params(hamiltonian):
     """Compute L and lambda after removing only the identity term (no truncation)."""
     current_terms = hamiltonian.terms.copy()
-    # 只删除identity项 ()
+    # Only remove the identity term
     if () in current_terms: 
         del current_terms[()]
     
     if not current_terms: 
         return 0, 0.0, 0.0
     
-    # 计算L (项数)
+    # Calculate L (number of terms)
     L = len(current_terms)
     
-    # 计算lambda (所有系数的绝对值之和)
+    # Calculate lambda (sum of absolute values of all coefficients)
     lambda_val = sum(abs(coeff) for coeff in current_terms.values())
     
-    # 计算Lambda (最大系数的绝对值)
+    # Calculate Lambda (absolute value of the largest coefficient)
     Lambda = max(abs(coeff) for coeff in current_terms.values()) if current_terms else 0.0
     
     return L, lambda_val, Lambda
@@ -96,7 +95,7 @@ if __name__ == "__main__":
         }
         
         for gamma in gamma_range:
-            # 计算复杂度
+            # Calculate complexity
             our_complexity = our_method_complexity(EPSILON_FIXED, lambda_val, DELTA_VAL, gamma)
             other_complexity = other_randomized_methods_complexity(EPSILON_FIXED, lambda_val, DELTA_VAL, gamma)
             
@@ -128,7 +127,7 @@ if __name__ == "__main__":
     legend = fig.legend(handles, labels, 
                loc='upper center',
                bbox_to_anchor=(0.5, 1.0), 
-               ncol=2,  # 因为只有2个图例项，设置为2列
+               ncol=2,  
                fontsize=20,
                frameon=True, 
                shadow=True, 

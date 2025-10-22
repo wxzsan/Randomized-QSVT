@@ -17,7 +17,7 @@ def calculate_and_save_hamiltonian(geometry, basis, multiplicity, charge, descri
         pickle.dump(qubit_hamiltonian, f)
     print(f"\n✅ Qubit Hamiltonian for {description} saved to '{filename}'")
 
-    # --- 修正了此处的系数计算 ---
+    # --- Fixed coefficient extraction below ---
     coefficients = [abs(coeff) for coeff in qubit_hamiltonian.terms.values()]
     # --------------------------
 
@@ -35,7 +35,7 @@ def calculate_and_save_hamiltonian(geometry, basis, multiplicity, charge, descri
     print(f"--- Calculation for {description} complete ---")
 
 
-# --- (分子定义部分保持不变) ---
+# --- (Molecule definitions) ---
 # 1. Propane (C3H8)
 propane_geometry = [
     ('C', ( 0.0000,  0.5863,  0.0000)), ('C', (-1.2681, -0.2626,  0.0000)),
