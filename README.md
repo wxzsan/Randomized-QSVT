@@ -36,7 +36,7 @@ This repository contains the source code for the paper:
 
 
 ## How to Run
-- Chemistry plots (requires prebuilt qubit Hamiltonians):
+- Chemistry plots:
   Build and store the three molecular qubit Hamiltonians first:
   ```bash
   python hamiltoinan_construction.py
