@@ -1,5 +1,3 @@
-### Randomized-QSVT: Depth and Complexity Studies
-
 This repository contains the source code for the paper:
 
 > **Randomized Quantum Singular Value Transformation**
