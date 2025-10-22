@@ -10,7 +10,7 @@ This repository contains the source code for the paper:
 > <small>\* Equal contribution</small>
 
 ## Overview
-- Study circuit depth and asymptotic time complexity for ground state property estimation using:
+- Study asymptotic circuit depth and time complexity for ground state property estimation using:
   - Our Method
   - QSVT with Trotterization
   - QETU with Trotterization
@@ -25,7 +25,7 @@ This repository contains the source code for the paper:
 - plot_depth_vs_eps.py: Depth vs error tolerance $\epsilon$ for several molecules.
 - plot_gamma_complexity_comparison.py: Time complexity vs overlap $\gamma$ (Our Method vs. other randomized methods).
 - hamiltoinan_construction.py: Build and save qubit Hamiltonians (OpenFermion + PySCF).
-- spectral-gap.py: Numerical spectral gap estimation for long-range spin models (SciPy/Numba).
+- spectral_gap.py: Numerical spectral gap estimation for long-range spin models (SciPy/Numba).
 
 ## Dependencies
 - Python 3.9+
