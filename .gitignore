@@ -1,0 +1,46 @@
+# os and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python cache and compiled products
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# virtual environment and local environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# data and intermediate results
+*.pkl
+*.npz
+*.npy
+*.csv
+*.tsv
+*.json
+
+# images and charts
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.pdf
+
+# checkpoints
+*.ckpt
+*.checkpoint
